@@ -1,0 +1,219 @@
+general:
+  startup_commands:
+    ["shell-exec gat-gwm", "shell-exec yasb", "shell-exec tacky-borders"]
+  shutdown_commands:
+    [
+      "shell-exec taskkill /IM gat-gwm.exe /F",
+      "shell-exec taskkill /IM yasb.exe /F",
+      "shell-exec taskkill /IM tacky-borders.exe /F",
+    ]
+
+  config_reload_commands: []
+
+  focus_follows_cursor: true
+
+  toggle_workspace_on_refocus: false
+
+  cursor_jump:
+    enabled: true
+    trigger: "window_focus"
+
+  hide_method: "cloak"
+  show_all_in_taskbar: true
+
+gaps:
+  scale_with_dpi: true
+  inner_gap: "6px"
+  outer_gap:
+    top: "6px"
+    right: "6px"
+    bottom: "6px"
+    left: "6px"
+
+window_effects:
+  focused_window:
+    border:
+      enabled: false
+      color: "#8dbcff"
+
+    hide_title_bar:
+      enabled: false
+
+    corner_style:
+      enabled: false
+      style: "rounded"
+
+    transparency:
+      enabled: true
+      opacity: "97%"
+
+  other_windows:
+    border:
+      enabled: false
+      color: "#a1a1a1"
+    hide_title_bar:
+      enabled: false
+    corner_style:
+      enabled: false
+      style: "rounded"
+    transparency:
+      enabled: true
+      opacity: "72%"
+
+window_behavior:
+  initial_state: "tiling"
+  state_defaults:
+    floating:
+      centered: true
+      shown_on_top: true
+    fullscreen:
+      maximized: true
+      shown_on_top: true
+
+workspaces:
+  - name: "1"
+  - name: "2"
+  - name: "3"
+  - name: "4"
+  - name: "5"
+
+window_rules:
+  - commands: ["wm-redraw"]
+    match:
+      - window_process: { equals: "zen" }
+
+  - commands: ["ignore"]
+    match:
+      - window_process: { equals: "zebar" }
+      - window_title: { regex: "[Pp]icture.in.[Pp]icture" }
+        window_class: { regex: "Chrome_WidgetWin_1|MozillaDialogClass" }
+      - window_process: { equals: "PowerToys" }
+        window_class: { regex: 'HwndWrapper\[PowerToys\.PowerAccent.*?\]' }
+      - window_process: { equals: "PowerToys" }
+        window_title: { regex: ".*? - Peek" }
+      - window_process: { equals: "Lively" }
+        window_class: { regex: "HwndWrapper" }
+      - window_process: { equals: "EXCEL" }
+        window_class: { not_regex: "XLMAIN" }
+      - window_process: { equals: "WINWORD" }
+        window_class: { not_regex: "OpusApp" }
+      - window_process: { equals: "POWERPNT" }
+        window_class: { not_regex: "PPTFrameClass" }
+      - window_process: { equals: "GHelper" }
+
+  - commands: ["set-floating", "size --width 1200 --height 800"]
+    match:
+      - window_process: { equals: "Taskmgr" }
+
+  - commands: ["move --workspace 5"]
+    match:
+      - window_process: { equals: "Vesktop" }
+      - window_process: { equals: "youtube-music-desktop-app" }
+
+keybindings:
+  - commands: ["focus --direction left"]
+    bindings: ["alt+a"]
+  - commands: ["focus --direction right"]
+    bindings: ["alt+d"]
+  - commands: ["focus --direction up"]
+    bindings: ["alt+w"]
+  - commands: ["focus --direction down"]
+    bindings: ["alt+s"]
+
+  - commands: ["move --direction left"]
+    bindings: ["alt+shift+a"]
+  - commands: ["move --direction right"]
+    bindings: ["alt+shift+d"]
+  - commands: ["move --direction up"]
+    bindings: ["alt+shift+w"]
+  - commands: ["move --direction down"]
+    bindings: ["alt+shift+s"]
+
+  - commands: ["resize --width -2%"]
+    bindings: ["alt+oem_minus"]
+  - commands: ["resize --width +2%"]
+    bindings: ["alt+oem_plus"]
+  - commands: ["resize --height +2%"]
+    bindings: ["alt+shift+oem_plus"]
+  - commands: ["resize --height -2%"]
+    bindings: ["alt+shift+oem_minus"]
+
+  - commands: ["set-transparency --opacity 0.5"]
+    bindings: ["alt+x"]
+
+  - commands: ["set-transparency --opacity 1"]
+    bindings: [alt+shift+x]
+
+  - commands: ["wm-toggle-pause"]
+    bindings: ["alt+shift+p"]
+
+  - commands: ["toggle-tiling-direction"]
+    bindings: ["alt+v"]
+
+  - commands: ["toggle-floating --centered", resize --width 1200 --height 720]
+    bindings: ["alt+shift+t"]
+
+  - commands: ["toggle-tiling"]
+    bindings: ["alt+t"]
+
+  - commands: ["toggle-fullscreen"]
+    bindings: ["alt+f"]
+
+  - commands: ["toggle-minimized"]
+    bindings: ["alt+shift+f"]
+
+  - commands: ["close"]
+    bindings: ["alt+q"]
+
+  - commands: ["wm-exit"]
+    bindings: ["alt+shift+escape"]
+
+  - commands: ["wm-reload-config"]
+    bindings: ["alt+shift+r"]
+
+  - commands: ["wm-redraw"]
+    bindings: ["alt+r"]
+
+  - commands: ["shell-exec --hide-window wezterm"]
+    bindings: ["alt+enter"]
+  - commands: ["shell-exec zen"]
+    bindings: ["alt+oem_pipe"]
+
+  - commands:
+      ["shell-exec --hide-window yasbc toggle-widget wallpapers --follow-focus"]
+    bindings: ["alt+e"]
+  - commands:
+      [
+        "shell-exec --hide-window yasbc toggle-widget powermenu --follow-focus --follow-mouse",
+      ]
+    bindings: ["alt+escape"]
+  - commands: ["shell-exec --hide-window yasbc start"]
+    bindings: ["alt+shift+h"]
+  - commands: ["shell-exec --hide-window yasbc stop"]
+    bindings: ["alt+h"]
+
+  - commands: ["focus --workspace 1"]
+    bindings: ["alt+1"]
+  - commands: ["focus --workspace 2"]
+    bindings: ["alt+2"]
+  - commands: ["focus --workspace 3"]
+    bindings: ["alt+3"]
+  - commands: ["focus --workspace 4"]
+    bindings: ["alt+4"]
+  - commands: ["focus --workspace 5"]
+    bindings: ["alt+5"]
+
+  - commands: ["move --workspace 1", "focus --workspace 1"]
+    bindings: ["alt+shift+1"]
+  - commands: ["move --workspace 2", "focus --workspace 2"]
+    bindings: ["alt+shift+2"]
+  - commands: ["move --workspace 3", "focus --workspace 3"]
+    bindings: ["alt+shift+3"]
+  - commands: ["move --workspace 4", "focus --workspace 4"]
+    bindings: ["alt+shift+4"]
+  - commands: ["move --workspace 5", "focus --workspace 5"]
+    bindings: ["alt+shift+5"]
+  - commands: ["move --next-workspace", "focus --next-workspace"]
+    bindings: ["alt+shift+e"]
+  - commands: ["move --prev-workspace", "focus --prev-workspace"]
+    bindings: ["alt+shift+q"]
