@@ -2,8 +2,8 @@
   --font-name-primary: "Overpass Nerd Font";
   --font-name-secondary: "Overpass Nerd Font";
   --font-name-icons: "Segoe Fluent Icons";
-  --text-primary: rgb(235, 219, 178);
-  --text-secondary: rgb(213, 196, 161);
+  --text-primary: rgb(197, 201, 197);
+  --text-secondary: rgb(197, 201, 197);
   --text-small: 12px;
   --text-normal: 14px;
   --text-lg: 16px;
@@ -15,9 +15,9 @@
   --font-normal: 600;
   --font-bold: 800;
   --font-bold-xl: 900;
-  --bg-taskbar: rgba(40, 40, 40, 0.98);
-  --bg-primary: rgba(40, 40, 40, 0.72);
-  --bg-secondary: rgba(40, 40, 40, 0.72);
+  --bg-taskbar: rgba(24, 22, 22, 0.8);
+  --bg-primary: rgba(24, 22, 22, 0.4);
+  --bg-secondary: rgba(24, 22, 22, 0.4);
   --bg-hover-primary: rgba(255, 255, 255, 0.1);
   --bg-hover-secondary: rgba(255, 255, 255, 0.06);
   --bg-hover-third: rgba(255, 255, 255, 0.12);
@@ -55,6 +55,7 @@
   margin: 0;
   padding: 0;
 }
+
 .yasb-bar {
   padding: var(--padding-normal);
   margin: 0;
@@ -133,6 +134,21 @@
   font-size: var(--text-normal);
   font-weight: var(--font-bold);
 }
+
+/* Grouper */
+.grouper-left, .grouper-center, .grouper-right {
+  margin: 0;
+  /* padding: 0; */
+  background-color: var(--bg-primary);
+}
+
+.grouper-left:hover,
+.grouper-center:hover,
+.grouper-right:hover {
+  background-color: var(--bg-primary);
+}
+
+
 .grouped-widgets {
   background-color: var(--bg-hover-secondary);
 }

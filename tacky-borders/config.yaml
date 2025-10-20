@@ -15,12 +15,12 @@ rendering_backend: V2
 # Global configuration options
 global:
   # border_width: Width of the border (in pixels)
-  border_width: 2
+  border_width: 3
 
   # border_offset: Offset of the border from the window edges (in pixels)
   #   - Negative values shrink the border inwards
   #   - Positive values expand the border outwards
-  border_offset: -2
+  border_offset: -3
 
   # border-radius: Radius of the border's corners. Supported values:
   #   - Auto: Automatically determine the radius
@@ -80,11 +80,11 @@ global:
   #             end: [1.0, 0.0]
   #       NOTE: [0.0, 0.0] = top-left, [1.0, 1.0] = bottom-right
   active_color:
-    colors: ["#ebdbb2", "#ebdbb2"]
+    colors: ["#C5C9C5", "#C5C9C5"]
     direction: 45deg
 
   inactive_color:
-    colors: ["#504945", "#504945"]
+    colors: ["#3A3D43", "#3A3D43"]
     direction: 45deg
 
   # komorebi_colors: Additional integration for komorebi's special window kinds

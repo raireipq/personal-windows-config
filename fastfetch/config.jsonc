@@ -8,6 +8,7 @@
     "os",
     "uptime",
     "shell",
+    "terminal",
     "cpu",
     "gpu",
     "memory",
@@ -16,7 +17,6 @@
     "battery",
     "break",
     "colors",
-    "break",
     "break",
     "break"
   ]

@@ -1,6 +1,11 @@
 general:
   startup_commands:
-    ["shell-exec gat-gwm", "shell-exec yasb", "shell-exec tacky-borders"]
+    [
+      "shell-exec gat-gwm",
+      "shell-exec yasb",
+      "shell-exec tacky-borders",
+      "shell-exec --hide-window wt",  # initiate a hidden terminal for fast terminal open
+    ]
   shutdown_commands:
     [
       "shell-exec taskkill /IM gat-gwm.exe /F",
@@ -101,6 +106,11 @@ window_rules:
         window_class: { not_regex: "PPTFrameClass" }
       - window_process: { equals: "GHelper" }
 
+  - commands: ["ignore"]
+    match:
+      - window_process: { equals: "yasb" }
+
+
   - commands: ["set-floating", "size --width 1200 --height 800"]
     match:
       - window_process: { equals: "Taskmgr" }
@@ -138,7 +148,7 @@ keybindings:
   - commands: ["resize --height -2%"]
     bindings: ["alt+shift+oem_minus"]
 
-  - commands: ["set-transparency --opacity 0.5"]
+  - commands: ["set-transparency --opacity-delta -0.25"]
     bindings: ["alt+x"]
 
   - commands: ["set-transparency --opacity 1"]
@@ -159,8 +169,8 @@ keybindings:
   - commands: ["toggle-fullscreen"]
     bindings: ["alt+f"]
 
-  - commands: ["toggle-minimized"]
-    bindings: ["alt+shift+f"]
+  # - commands: ["toggle-minimized"]
+  #   bindings: ["alt+shift+f"]
 
   - commands: ["close"]
     bindings: ["alt+q"]
@@ -174,7 +184,7 @@ keybindings:
   - commands: ["wm-redraw"]
     bindings: ["alt+r"]
 
-  - commands: ["shell-exec --hide-window wezterm"]
+  - commands: ["shell-exec wt"]
     bindings: ["alt+enter"]
   - commands: ["shell-exec zen"]
     bindings: ["alt+oem_pipe"]
@@ -183,14 +193,13 @@ keybindings:
       ["shell-exec --hide-window yasbc toggle-widget wallpapers --follow-focus"]
     bindings: ["alt+e"]
   - commands:
-      [
-        "shell-exec --hide-window yasbc toggle-widget powermenu --follow-focus --follow-mouse",
-      ]
+      ["shell-exec --hide-window yasbc toggle-widget powermenu --follow-focus"]
     bindings: ["alt+escape"]
-  - commands: ["shell-exec --hide-window yasbc start"]
-    bindings: ["alt+shift+h"]
-  - commands: ["shell-exec --hide-window yasbc stop"]
-    bindings: ["alt+h"]
+
+  # - commands: ["shell-exec --hide-window yasbc start"]
+  #   bindings: ["alt+shift+h"]
+  # - commands: ["shell-exec --hide-window yasbc stop"]
+  #   bindings: ["alt+h"]
 
   - commands: ["focus --workspace 1"]
     bindings: ["alt+1"]
