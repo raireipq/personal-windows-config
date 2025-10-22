@@ -16,8 +16,8 @@
   --font-bold: 800;
   --font-bold-xl: 900;
   --bg-taskbar: rgba(24, 22, 22, 0.8);
-  --bg-primary: rgba(24, 22, 22, 0.4);
-  --bg-secondary: rgba(24, 22, 22, 0.4);
+  --bg-primary: rgba(24, 22, 22, 0.8);
+  --bg-secondary: rgba(24, 22, 22, 0.8);
   --bg-hover-primary: rgba(255, 255, 255, 0.1);
   --bg-hover-secondary: rgba(255, 255, 255, 0.06);
   --bg-hover-third: rgba(255, 255, 255, 0.12);

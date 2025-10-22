@@ -49,48 +49,11 @@ bars:
         "power_menu",
       ]
 widgets:
-  grouper-right:
-    type: "yasb.grouper.GrouperWidget"
-    options:
-      class_name: "grouper-right"
-      widgets: [
-        "microphone",
-        "wallpapers",
-        "traffics",
-        "grouped_widgets",
-        "volume",
-        "weather",
-        "battery",
-        "language",
-        "notifications",
-        "power_menu",
-      ]
-
-  grouper-center:
-    type: "yasb.grouper.GrouperWidget"
-    options:
-      class_name: "grouper-center"
-      widgets: [
-        "clock",
-        "pomodoro",
-      ]
-
-  grouper-left:
-    type: "yasb.grouper.GrouperWidget"
-    options:
-      class_name: "grouper-left"
-      widgets: [
-        "glazewm_workspaces",
-        "active_window",
-        "media",
-      ]
-
-
   pomodoro:
     type: "yasb.pomodoro.PomodoroWidget"
     options:
-      label: "<span>{icon}</span> {remaining}"
-      label_alt: "<span>{icon}</span>"
+      label_alt: "<span>{icon}</span> {remaining}"
+      label: "<span>{icon}</span>"
       work_duration: 25
       break_duration: 5
       long_break_duration: 15
@@ -98,7 +61,7 @@ widgets:
       auto_start_breaks: true
       auto_start_work: true
       sound_notification: true
-      show_notification: true
+      show_notification: false
       hide_on_break: false
       icons:
         work: "\uf252"
@@ -114,8 +77,8 @@ widgets:
         offset_top: 4
         offset_left: 0
         circle_background_color: "#504945"
-        circle_work_progress_color: "#ebdbb2"
-        circle_break_progress_color: "#ebdbb2"
+        circle_work_progress_color: "#C5C9C5"
+        circle_break_progress_color: "#C5C9C5"
         circle_thickness: 8
         circle_size: 160
       callbacks:

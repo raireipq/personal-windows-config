@@ -5,5 +5,5 @@ whkdrc
 glazewm/errors.log
 tacky-borders/tacky-borders.log
 yasb/yasb.log
-micro/backups
-micro/buffers
+micro/backups/
+micro/buffers/
