@@ -1,41 +1,51 @@
 watch_stylesheet: true
 watch_config: true
 debug: false
+
 bars:
+
   status-bar:
     enabled: true
     screens: ["*"]
     class_name: "yasb-bar"
+
     alignment:
       position: "top"
       center: true
+
     blur_effect:
       enabled: false
       acrylic: false
       dark_mode: true
       round_corners: true
       border_color: None
+
     window_flags:
       always_on_top: true
       windows_app_bar: true
+
     dimensions:
       width: "100%"
       height: 36
+
     padding:
       top: 6
       left: 6
       bottom: 0
       right: 6
+
     widgets:
       left: [
         "active_window",
         "media",
       ]
+
       center: [
         "glazewm_workspaces",
         "clock",
         "pomodoro",
       ]
+
       right: [
         "microphone",
         "wallpapers",
@@ -48,7 +58,9 @@ bars:
         "notifications",
         "power_menu",
       ]
+
 widgets:
+
   pomodoro:
     type: "yasb.pomodoro.PomodoroWidget"
     options:
@@ -85,6 +97,7 @@ widgets:
         on_left: "toggle_menu"
         on_middle: "reset_timer"
         on_right: "toggle_label"
+
   language:
     type: "yasb.language.LanguageWidget"
     options:
@@ -104,45 +117,7 @@ widgets:
         offset_left: 0
         show_layout_icon: true
         layout_icon: "\uf11c"
-  todo:
-    type: "yasb.todo.TodoWidget"
-    options:
-      label: "\uf0ae {count}/{completed}"
-      label_alt: "\uf0ae Tasks: {count}"
-      menu:
-        blur: true
-        round_corners: true
-        round_corners_type: "normal"
-        border_color: "system"
-        alignment: "center"
-        direction: "down"
-        offset_top: 4
-        offset_left: 0
-      icons:
-        add: "\uf501 New Task"
-        edit: "Edit"
-        delete: "Delete"
-        date: "\ue641"
-        category: "\uf412"
-        checked: "\udb80\udd34"
-        unchecked: "\udb80\udd30"
-        sort: "\ueab4"
-        no_tasks: "\uf4a0"
-      categories:
-        default:
-          label: "General"
-        soon:
-          label: "Complete soon"
-        today:
-          label: "End of day"
-        urgent:
-          label: "Urgent"
-        important:
-          label: "Important"
-      callbacks:
-        on_left: "toggle_menu"
-        on_middle: "do_nothing"
-        on_right: "toggle_label"
+  
   disk:
     type: "yasb.disk.DiskWidget"
     options:
@@ -171,6 +146,7 @@ widgets:
         low: 25
         medium: 50
         high: 90
+  
   glazewm_workspaces:
     type: "glazewm.workspaces.GlazewmWorkspacesWidget"
     options:
@@ -183,6 +159,7 @@ widgets:
       hide_if_offline: false
       enable_scroll_switching: false
       animation: true
+  
   active_window:
     type: "yasb.active_window.ActiveWindowWidget"
     options:
@@ -210,6 +187,7 @@ widgets:
         offset_left: 0
       callbacks:
         on_left: "toggle_menu"
+  
   microphone:
     type: "yasb.microphone.MicrophoneWidget"
     options:
@@ -229,6 +207,7 @@ widgets:
       callbacks:
         on_right: "toggle_mic_menu" 
         on_left: "toggle_mute"
+  
   grouped_widgets:
     type: "yasb.grouper.GrouperWidget"
     options:
@@ -238,6 +217,7 @@ widgets:
         "memory",
         "disk",
       ]
+  
   battery:
     type: "yasb.battery.BatteryWidget"
     options:
@@ -258,6 +238,7 @@ widgets:
         medium: 50
         high: 70
         full: 100
+  
   clock:
     type: "yasb.clock.ClockWidget"
     options:
@@ -279,6 +260,7 @@ widgets:
         show_week_numbers: true
         country_code: "ID"
         holiday_color: "#FF6464"
+  
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
@@ -321,6 +303,7 @@ widgets:
         hourly_icon_size: 32 # better to set 16, 32 or 64 for better quality
         icon_smoothing: true # should be true for smoother icon or false for sharper icon if using 16, 32 or 64 for hourly_icon_size
         temp_line_width: 3 # can be 0 to hide the temperature line
+
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
@@ -343,6 +326,7 @@ widgets:
         border_color: "System"
         alignment: "center"
         direction: "down"
+
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
@@ -359,6 +343,7 @@ widgets:
         restart: ["\uead2", "Restart"]
         hibernate: ["\uf28e", "Hibernate"]
         cancel: ["\udb81\udf3a", "Cancel"]
+
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
@@ -368,6 +353,7 @@ widgets:
         on_left: "toggle_notification"
         on_right: "do_nothing"
         on_middle: "toggle_label"
+
   cpu:
     type: "yasb.cpu.CpuWidget"
     options:
@@ -391,6 +377,7 @@ widgets:
       histogram_num_columns: 8
       callbacks:
         on_left: "toggle_label"
+
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
@@ -403,6 +390,7 @@ widgets:
         low: 25
         medium: 50
         high: 90
+
   traffics:
     type: "yasb.traffic.TrafficWidget"
     options:
@@ -417,6 +405,7 @@ widgets:
         direction: "down"
       callbacks:
         on_left: "toggle_menu"
+
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -468,12 +457,13 @@ widgets:
         style: "left"
         separator: "  •  "
         label_padding: 32
+
   wallpapers:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
       label: "\udb83\ude09"
       image_path: "C:\\Users\\rairei\\Pictures\\re99" # Example path to folder with images
-      change_automatically: true # Automatically change wallpaper
+      change_automatically: false # Automatically change wallpaper
       update_interval: 60 # If change_automatically is true, update interval in seconds
       gallery:
           enabled: true

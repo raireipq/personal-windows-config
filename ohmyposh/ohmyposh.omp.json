@@ -66,12 +66,12 @@
           "type": "status",
           "style": "plain",
           "foreground": "green",
-          "foreground_templates": ["{{ if gt .Code 0 }}#E06C75{{ end }}"],
+          "foreground_templates": ["{{ if gt .Code 0 }}green{{ end }}"],
           "template": " x{{ reason .Code }}"
         },
         {
           "foreground": "green",
-          "foreground_templates": ["{{ if gt .Code 0 }}#E06C75{{ end }}"],
+          "foreground_templates": ["{{ if gt .Code 0 }green{{ end }}"],
           "properties": {
             "style": "roundrock",
             "always_enabled": true
@@ -110,7 +110,7 @@
           "type": "root"
         },
         {
-          "foreground": "#E06C75",
+          "foreground": "red",
           "style": "plain",
           "template": "\u276f",
           "type": "text"

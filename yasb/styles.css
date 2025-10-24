@@ -15,7 +15,7 @@
   --font-normal: 600;
   --font-bold: 800;
   --font-bold-xl: 900;
-  --bg-taskbar: rgba(24, 22, 22, 0.8);
+  --bg-taskbar: rgba(24, 22, 22, 0.01);
   --bg-primary: rgba(24, 22, 22, 0.8);
   --bg-secondary: rgba(24, 22, 22, 0.8);
   --bg-hover-primary: rgba(255, 255, 255, 0.1);
@@ -414,7 +414,7 @@
   padding: 16px 0 0 0;
   min-width: 540px;
   max-width: 540px;
-  background-color: var(--bg-taskbar);
+  background-color: var(--bg-primary);
 }
 .media-menu .title,
 .media-menu .artist,
@@ -533,6 +533,11 @@
 }
 .media-menu .app-volume-container .unmute-button {
   color: var(--text-secondary);
+}
+
+/* Pomodoro Menu */
+.pomodoro-menu {
+  background-color: var(--bg-primary);
 }
 
 /* GlazeWM */
